@@ -7,4 +7,4 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o
  ../include/server/model/groupuser.hpp
  ../include/server/model/user.hpp
  ../thirdparty/json.hpp
- /home/book/muduo_test/chat/src/client/main.cpp
+ /home/book/muduo_test/chat/ChatServer_Test/src/client/main.cpp
