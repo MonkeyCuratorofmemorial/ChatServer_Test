@@ -3,10 +3,11 @@
 #include <muduo/base/Logging.h>
 #include <vector>
 #include <iostream>
+#include <atomic>
 using namespace std;
 using namespace muduo;
 
-bool ready = false; //全局标志位
+atomic_bool ready{false}; //全局标志位
 
 //获取单例对象的接口函数
 ChatService* ChatService::instance(){
@@ -153,6 +154,7 @@ void ChatService::login(const TcpConnectionPtr &conn,json &js,Timestamp time){
                     change_cv.wait(lock);
                 }
                 conn->send(change_send);
+                ready = false;
             });
             t.detach();
         }    

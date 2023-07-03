@@ -417,7 +417,6 @@ void chat(int clientfd, string str){
     js["msg"] = message;
     js["time"] = getCurrentTime();
     string buffer = js.dump();
-    cout << buffer << endl;
 
     int len = send(clientfd, buffer.c_str(), strlen(buffer.c_str()) + 1, 0);
     if(len == -1){
